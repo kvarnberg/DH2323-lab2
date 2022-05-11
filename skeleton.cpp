@@ -97,8 +97,8 @@ void Draw()
       {
         vec3 light = DirectLight(intersection);
         vec3 color = triangles[intersection.triangleIndex].color;
-        // vec3 colornlight = color * (light + indirectLight);
-        sdlAux->putPixel(x, y, color);
+        vec3 colornlight = color * (light + indirectLight);
+        sdlAux->putPixel(x, y, colornlight);
       }
       else
       {
